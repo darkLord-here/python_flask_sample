@@ -1,0 +1,21 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+-   repo: local
+    hooks:
+    -   id: check-required-files
+        name: Check for required files
+        entry: python -c "import os; assert os.path.isfile('.gitignore'), '.gitignore is missing'"
+        language: system
+        pass_filenames: false
+#    -   id: sync-requirements
+#        name: Sync requirements.txt
+#        entry: python update_requirements.py
+#        language: system
+#        pass_filenames: false
+#        stages: [ commit ]

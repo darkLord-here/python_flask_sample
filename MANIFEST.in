@@ -1,0 +1,4 @@
+include best_practices/schema.sql
+graft best_practices/static
+graft best_practices/templates
+global-exclude *.pyc
